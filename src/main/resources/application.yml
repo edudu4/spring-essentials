@@ -1,0 +1,11 @@
+server:
+  error:
+    include-stacktrace: never
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/person
+    username: postgres
+    password: 1234
+  jpa:
+    hibernate:
+      ddl-auto: update
