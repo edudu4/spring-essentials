@@ -25,6 +25,12 @@ public class PersonController {
     private final DateUtil dateUtil;
     private final PersonService personService;
 
+
+    @GetMapping(path = "/all")
+    public ResponseEntity<List<Person>> listAll() {
+        log.info(dateUtil.formatLocalDateTimeToDatabaseStyle(LocalDateTime.now()));
+        return new ResponseEntity<>(personService.listAllNoPageable(), HttpStatus.OK);
+    }
     @GetMapping()
     public ResponseEntity<Page<Person>> list(Pageable pageable) {
         log.info(dateUtil.formatLocalDateTimeToDatabaseStyle(LocalDateTime.now()));

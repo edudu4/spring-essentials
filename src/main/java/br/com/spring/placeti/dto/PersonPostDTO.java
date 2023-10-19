@@ -13,7 +13,7 @@ public class PersonPostDTO {
     @NotBlank(message = "Profession must not be blank")
     private String profession;
 
-    @NotNull(message = "The person must have to be a valid age")
+    @NotNull(message = "The person must have a valid age")
     @Min(value = 18, message = "Age should not be less than 18")
     private int age;
 }

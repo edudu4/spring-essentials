@@ -23,6 +23,9 @@ public class PersonService {
     public Page<Person> listAll(Pageable pageable) {
         return personRepository.findAll(pageable);
     }
+    public List<Person> listAllNoPageable() {
+        return personRepository.findAll();
+    }
 
     public List<Person> findByProfession(String profession){
         return personRepository.findByProfession(profession);
