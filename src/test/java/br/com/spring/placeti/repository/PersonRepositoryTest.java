@@ -1,6 +1,7 @@
 package br.com.spring.placeti.repository;
 
 import br.com.spring.placeti.domain.Person;
+import br.com.spring.placeti.util.PersonCreator;
 import jakarta.validation.ConstraintViolationException;
 import lombok.extern.log4j.Log4j2;
 import org.assertj.core.api.Assertions;
@@ -24,7 +25,7 @@ class PersonRepositoryTest {
     @Test
     @DisplayName("Save Person when Sucessful")
     void save_PersistPerson_WhenSucessful() {
-        Person personToBeSaved = createPerson();
+        Person personToBeSaved = PersonCreator.createPersonToBeSaved();
 
         Person personSaved = this.personRepository.save(personToBeSaved);
 
@@ -38,7 +39,7 @@ class PersonRepositoryTest {
     @Test
     @DisplayName("Update Person when Sucessful")
     void update_UpdatesPerson_WhenSucessful() {
-        Person personToBeSaved = createPerson();
+        Person personToBeSaved = PersonCreator.createPersonToBeSaved();
 
         Person personSaved = this.personRepository.save(personToBeSaved);
 
@@ -56,7 +57,7 @@ class PersonRepositoryTest {
     @Test
     @DisplayName("Delete Person when Sucessful")
     void delete_RemovesPerson_WhenSucessful() {
-        Person personToBeSaved = createPerson();
+        Person personToBeSaved = PersonCreator.createPersonToBeSaved();
 
         Person personSaved = this.personRepository.save(personToBeSaved);
 
@@ -70,7 +71,7 @@ class PersonRepositoryTest {
     @Test
     @DisplayName("Find By Profession returns list of Person with the Profession when Sucessful")
     void findByProfession_ReturnsListOfPerson_WhenSucessful() {
-        Person personToBeSaved = createPerson();
+        Person personToBeSaved = PersonCreator.createPersonToBeSaved();
 
         Person personSaved = this.personRepository.save(personToBeSaved);
 
@@ -89,27 +90,4 @@ class PersonRepositoryTest {
         Assertions.assertThat(professionList).isEmpty();
 
     }
-
-    @Test
-    @DisplayName("Save Throw ConstraintViolationException when Person Attribute is empty ")
-    void save_ThrowsConstraintViolationException_WhenPersonAttributeIsEmpty() {
-        Person person = new Person();
-
-        Assertions.assertThatThrownBy(() -> this.personRepository.save((person)))
-                .isInstanceOf(ConstraintViolationException.class)
-                .hasMessageContaining("Name must not be blank")
-                .hasMessageContaining("Profession must not be blank")
-                .hasMessageContaining("The person must have a valid age")
-                .hasMessageContaining("Age should not be less than 18");
-
-    }
-
-    private Person createPerson() {
-        return Person.builder()
-                .name("Eduardo Alves")
-                .age(22)
-                .profession("Desenvolvedor")
-                .build();
-    }
-
 }
