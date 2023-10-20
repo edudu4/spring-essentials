@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="br.com.spring.placeti.integration.PersonControllerIT" time="23.669" tests="8" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\eduardo.rocha\IdeaProjects\spring-boot-essentials\target\test-classes;C:\Users\eduardo.rocha\IdeaProjects\spring-boot-essentials\target\classes;C:\Users\eduardo.rocha\.m2\repository\org\springframework\boot\spring-boot-starter-validation\3.1.4\spring-boot-starter-validation-3.1.4.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\boot\spring-boot-starter\3.1.4\spring-boot-starter-3.1.4.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.1.4\spring-boot-starter-logging-3.1.4.jar;C:\Users\eduardo.rocha\.m2\repository\ch\qos\logback\logback-classic\1.4.11\logback-classic-1.4.11.jar;C:\Users\eduardo.rocha\.m2\repository\ch\qos\logback\logback-core\1.4.11\logback-core-1.4.11.jar;C:\Users\eduardo.rocha\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.20.0\log4j-to-slf4j-2.20.0.jar;C:\Users\eduardo.rocha\.m2\repository\org\apache\logging\log4j\log4j-api\2.20.0\log4j-api-2.20.0.jar;C:\Users\eduardo.rocha\.m2\repository\org\slf4j\jul-to-slf4j\2.0.9\jul-to-slf4j-2.0.9.jar;C:\Users\eduardo.rocha\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\eduardo.rocha\.m2\repository\org\yaml\snakeyaml\1.33\snakeyaml-1.33.jar;C:\Users\eduardo.rocha\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.13\tomcat-embed-el-10.1.13.jar;C:\Users\eduardo.rocha\.m2\repository\org\hibernate\validator\hibernate-validator\8.0.1.Final\hibernate-validator-8.0.1.Final.jar;C:\Users\eduardo.rocha\.m2\repository\jakarta\validation\jakarta.validation-api\3.0.2\jakarta.validation-api-3.0.2.jar;C:\Users\eduardo.rocha\.m2\repository\org\jboss\logging\jboss-logging\3.5.3.Final\jboss-logging-3.5.3.Final.jar;C:\Users\eduardo.rocha\.m2\repository\com\fasterxml\classmate\1.5.1\classmate-1.5.1.jar;C:\Users\eduardo.rocha\.m2\repository\org\mapstruct\mapstruct\1.5.5.Final\mapstruct-1.5.5.Final.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.1.4\spring-boot-starter-web-3.1.4.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.1.4\spring-boot-starter-json-3.1.4.jar;C:\Users\eduardo.rocha\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.15.2\jackson-databind-2.15.2.jar;C:\Users\eduardo.rocha\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.15.2\jackson-annotations-2.15.2.jar;C:\Users\eduardo.rocha\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.15.2\jackson-core-2.15.2.jar;C:\Users\eduardo.rocha\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.15.2\jackson-datatype-jdk8-2.15.2.jar;C:\Users\eduardo.rocha\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.15.2\jackson-datatype-jsr310-2.15.2.jar;C:\Users\eduardo.rocha\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.15.2\jackson-module-parameter-names-2.15.2.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.1.4\spring-boot-starter-tomcat-3.1.4.jar;C:\Users\eduardo.rocha\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.13\tomcat-embed-core-10.1.13.jar;C:\Users\eduardo.rocha\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.13\tomcat-embed-websocket-10.1.13.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\spring-web\6.0.12\spring-web-6.0.12.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\spring-beans\6.0.12\spring-beans-6.0.12.jar;C:\Users\eduardo.rocha\.m2\repository\io\micrometer\micrometer-observation\1.11.4\micrometer-observation-1.11.4.jar;C:\Users\eduardo.rocha\.m2\repository\io\micrometer\micrometer-commons\1.11.4\micrometer-commons-1.11.4.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\spring-webmvc\6.0.12\spring-webmvc-6.0.12.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\spring-aop\6.0.12\spring-aop-6.0.12.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\spring-context\6.0.12\spring-context-6.0.12.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\spring-expression\6.0.12\spring-expression-6.0.12.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\3.1.4\spring-boot-starter-data-jpa-3.1.4.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\boot\spring-boot-starter-aop\3.1.4\spring-boot-starter-aop-3.1.4.jar;C:\Users\eduardo.rocha\.m2\repository\org\aspectj\aspectjweaver\1.9.20\aspectjweaver-1.9.20.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\3.1.4\spring-boot-starter-jdbc-3.1.4.jar;C:\Users\eduardo.rocha\.m2\repository\com\zaxxer\HikariCP\5.0.1\HikariCP-5.0.1.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\spring-jdbc\6.0.12\spring-jdbc-6.0.12.jar;C:\Users\eduardo.rocha\.m2\repository\org\hibernate\orm\hibernate-core\6.2.9.Final\hibernate-core-6.2.9.Final.jar;C:\Users\eduardo.rocha\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar;C:\Users\eduardo.rocha\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\eduardo.rocha\.m2\repository\org\hibernate\common\hibernate-commons-annotations\6.0.6.Final\hibernate-commons-annotations-6.0.6.Final.jar;C:\Users\eduardo.rocha\.m2\repository\io\smallrye\jandex\3.0.5\jandex-3.0.5.jar;C:\Users\eduardo.rocha\.m2\repository\net\bytebuddy\byte-buddy\1.14.8\byte-buddy-1.14.8.jar;C:\Users\eduardo.rocha\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.3\jaxb-runtime-4.0.3.jar;C:\Users\eduardo.rocha\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.3\jaxb-core-4.0.3.jar;C:\Users\eduardo.rocha\.m2\repository\org\eclipse\angus\angus-activation\2.0.1\angus-activation-2.0.1.jar;C:\Users\eduardo.rocha\.m2\repository\org\glassfish\jaxb\txw2\4.0.3\txw2-4.0.3.jar;C:\Users\eduardo.rocha\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.2\istack-commons-runtime-4.1.2.jar;C:\Users\eduardo.rocha\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\eduardo.rocha\.m2\repository\org\antlr\antlr4-runtime\4.10.1\antlr4-runtime-4.10.1.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\data\spring-data-jpa\3.1.4\spring-data-jpa-3.1.4.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\data\spring-data-commons\3.1.4\spring-data-commons-3.1.4.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\spring-orm\6.0.12\spring-orm-6.0.12.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\spring-tx\6.0.12\spring-tx-6.0.12.jar;C:\Users\eduardo.rocha\.m2\repository\org\slf4j\slf4j-api\2.0.9\slf4j-api-2.0.9.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\spring-aspects\6.0.12\spring-aspects-6.0.12.jar;C:\Users\eduardo.rocha\.m2\repository\com\h2database\h2\2.1.214\h2-2.1.214.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\boot\spring-boot-starter-test\3.1.4\spring-boot-starter-test-3.1.4.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\boot\spring-boot-test\3.1.4\spring-boot-test-3.1.4.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\3.1.4\spring-boot-test-autoconfigure-3.1.4.jar;C:\Users\eduardo.rocha\.m2\repository\com\jayway\jsonpath\json-path\2.8.0\json-path-2.8.0.jar;C:\Users\eduardo.rocha\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.1\jakarta.xml.bind-api-4.0.1.jar;C:\Users\eduardo.rocha\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.2\jakarta.activation-api-2.1.2.jar;C:\Users\eduardo.rocha\.m2\repository\net\minidev\json-smart\2.4.11\json-smart-2.4.11.jar;C:\Users\eduardo.rocha\.m2\repository\net\minidev\accessors-smart\2.4.11\accessors-smart-2.4.11.jar;C:\Users\eduardo.rocha\.m2\repository\org\ow2\asm\asm\9.3\asm-9.3.jar;C:\Users\eduardo.rocha\.m2\repository\org\assertj\assertj-core\3.24.2\assertj-core-3.24.2.jar;C:\Users\eduardo.rocha\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\eduardo.rocha\.m2\repository\org\junit\jupiter\junit-jupiter\5.9.3\junit-jupiter-5.9.3.jar;C:\Users\eduardo.rocha\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.3\junit-jupiter-api-5.9.3.jar;C:\Users\eduardo.rocha\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\eduardo.rocha\.m2\repository\org\junit\platform\junit-platform-commons\1.9.3\junit-platform-commons-1.9.3.jar;C:\Users\eduardo.rocha\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\eduardo.rocha\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.9.3\junit-jupiter-params-5.9.3.jar;C:\Users\eduardo.rocha\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.3\junit-jupiter-engine-5.9.3.jar;C:\Users\eduardo.rocha\.m2\repository\org\junit\platform\junit-platform-engine\1.9.3\junit-platform-engine-1.9.3.jar;C:\Users\eduardo.rocha\.m2\repository\org\mockito\mockito-core\5.3.1\mockito-core-5.3.1.jar;C:\Users\eduardo.rocha\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.8\byte-buddy-agent-1.14.8.jar;C:\Users\eduardo.rocha\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\eduardo.rocha\.m2\repository\org\mockito\mockito-junit-jupiter\5.3.1\mockito-junit-jupiter-5.3.1.jar;C:\Users\eduardo.rocha\.m2\repository\org\skyscreamer\jsonassert\1.5.1\jsonassert-1.5.1.jar;C:\Users\eduardo.rocha\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\spring-core\6.0.12\spring-core-6.0.12.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\spring-jcl\6.0.12\spring-jcl-6.0.12.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\spring-test\6.0.12\spring-test-6.0.12.jar;C:\Users\eduardo.rocha\.m2\repository\org\xmlunit\xmlunit-core\2.9.1\xmlunit-core-2.9.1.jar;C:\Users\eduardo.rocha\.m2\repository\org\postgresql\postgresql\42.6.0\postgresql-42.6.0.jar;C:\Users\eduardo.rocha\.m2\repository\org\checkerframework\checker-qual\3.31.0\checker-qual-3.31.0.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\boot\spring-boot-devtools\3.1.4\spring-boot-devtools-3.1.4.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\boot\spring-boot\3.1.4\spring-boot-3.1.4.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.1.4\spring-boot-autoconfigure-3.1.4.jar;C:\Users\eduardo.rocha\.m2\repository\org\projectlombok\lombok\1.18.30\lombok-1.18.30.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="catalina.useNaming" value="false"/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="America/Sao_Paulo"/>
+    <property name="org.jboss.logging.provider" value="slf4j"/>
+    <property name="user.country.format" value="BR"/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-17\bin"/>
+    <property name="sun.java.command" value="C:\Users\eduardo.rocha\AppData\Local\Temp\surefire17453889869000616265\surefirebooter-20231020143256707_3.jar C:\Users\eduardo.rocha\AppData\Local\Temp\surefire17453889869000616265 2023-10-20T14-32-56_388-jvmRun1 surefire-20231020143256707_1tmp surefire_0-20231020143256707_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\eduardo.rocha\IdeaProjects\spring-boot-essentials\target\test-classes;C:\Users\eduardo.rocha\IdeaProjects\spring-boot-essentials\target\classes;C:\Users\eduardo.rocha\.m2\repository\org\springframework\boot\spring-boot-starter-validation\3.1.4\spring-boot-starter-validation-3.1.4.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\boot\spring-boot-starter\3.1.4\spring-boot-starter-3.1.4.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.1.4\spring-boot-starter-logging-3.1.4.jar;C:\Users\eduardo.rocha\.m2\repository\ch\qos\logback\logback-classic\1.4.11\logback-classic-1.4.11.jar;C:\Users\eduardo.rocha\.m2\repository\ch\qos\logback\logback-core\1.4.11\logback-core-1.4.11.jar;C:\Users\eduardo.rocha\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.20.0\log4j-to-slf4j-2.20.0.jar;C:\Users\eduardo.rocha\.m2\repository\org\apache\logging\log4j\log4j-api\2.20.0\log4j-api-2.20.0.jar;C:\Users\eduardo.rocha\.m2\repository\org\slf4j\jul-to-slf4j\2.0.9\jul-to-slf4j-2.0.9.jar;C:\Users\eduardo.rocha\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\eduardo.rocha\.m2\repository\org\yaml\snakeyaml\1.33\snakeyaml-1.33.jar;C:\Users\eduardo.rocha\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.13\tomcat-embed-el-10.1.13.jar;C:\Users\eduardo.rocha\.m2\repository\org\hibernate\validator\hibernate-validator\8.0.1.Final\hibernate-validator-8.0.1.Final.jar;C:\Users\eduardo.rocha\.m2\repository\jakarta\validation\jakarta.validation-api\3.0.2\jakarta.validation-api-3.0.2.jar;C:\Users\eduardo.rocha\.m2\repository\org\jboss\logging\jboss-logging\3.5.3.Final\jboss-logging-3.5.3.Final.jar;C:\Users\eduardo.rocha\.m2\repository\com\fasterxml\classmate\1.5.1\classmate-1.5.1.jar;C:\Users\eduardo.rocha\.m2\repository\org\mapstruct\mapstruct\1.5.5.Final\mapstruct-1.5.5.Final.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.1.4\spring-boot-starter-web-3.1.4.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.1.4\spring-boot-starter-json-3.1.4.jar;C:\Users\eduardo.rocha\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.15.2\jackson-databind-2.15.2.jar;C:\Users\eduardo.rocha\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.15.2\jackson-annotations-2.15.2.jar;C:\Users\eduardo.rocha\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.15.2\jackson-core-2.15.2.jar;C:\Users\eduardo.rocha\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.15.2\jackson-datatype-jdk8-2.15.2.jar;C:\Users\eduardo.rocha\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.15.2\jackson-datatype-jsr310-2.15.2.jar;C:\Users\eduardo.rocha\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.15.2\jackson-module-parameter-names-2.15.2.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.1.4\spring-boot-starter-tomcat-3.1.4.jar;C:\Users\eduardo.rocha\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.13\tomcat-embed-core-10.1.13.jar;C:\Users\eduardo.rocha\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.13\tomcat-embed-websocket-10.1.13.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\spring-web\6.0.12\spring-web-6.0.12.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\spring-beans\6.0.12\spring-beans-6.0.12.jar;C:\Users\eduardo.rocha\.m2\repository\io\micrometer\micrometer-observation\1.11.4\micrometer-observation-1.11.4.jar;C:\Users\eduardo.rocha\.m2\repository\io\micrometer\micrometer-commons\1.11.4\micrometer-commons-1.11.4.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\spring-webmvc\6.0.12\spring-webmvc-6.0.12.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\spring-aop\6.0.12\spring-aop-6.0.12.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\spring-context\6.0.12\spring-context-6.0.12.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\spring-expression\6.0.12\spring-expression-6.0.12.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\3.1.4\spring-boot-starter-data-jpa-3.1.4.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\boot\spring-boot-starter-aop\3.1.4\spring-boot-starter-aop-3.1.4.jar;C:\Users\eduardo.rocha\.m2\repository\org\aspectj\aspectjweaver\1.9.20\aspectjweaver-1.9.20.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\3.1.4\spring-boot-starter-jdbc-3.1.4.jar;C:\Users\eduardo.rocha\.m2\repository\com\zaxxer\HikariCP\5.0.1\HikariCP-5.0.1.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\spring-jdbc\6.0.12\spring-jdbc-6.0.12.jar;C:\Users\eduardo.rocha\.m2\repository\org\hibernate\orm\hibernate-core\6.2.9.Final\hibernate-core-6.2.9.Final.jar;C:\Users\eduardo.rocha\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar;C:\Users\eduardo.rocha\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\eduardo.rocha\.m2\repository\org\hibernate\common\hibernate-commons-annotations\6.0.6.Final\hibernate-commons-annotations-6.0.6.Final.jar;C:\Users\eduardo.rocha\.m2\repository\io\smallrye\jandex\3.0.5\jandex-3.0.5.jar;C:\Users\eduardo.rocha\.m2\repository\net\bytebuddy\byte-buddy\1.14.8\byte-buddy-1.14.8.jar;C:\Users\eduardo.rocha\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.3\jaxb-runtime-4.0.3.jar;C:\Users\eduardo.rocha\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.3\jaxb-core-4.0.3.jar;C:\Users\eduardo.rocha\.m2\repository\org\eclipse\angus\angus-activation\2.0.1\angus-activation-2.0.1.jar;C:\Users\eduardo.rocha\.m2\repository\org\glassfish\jaxb\txw2\4.0.3\txw2-4.0.3.jar;C:\Users\eduardo.rocha\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.2\istack-commons-runtime-4.1.2.jar;C:\Users\eduardo.rocha\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\eduardo.rocha\.m2\repository\org\antlr\antlr4-runtime\4.10.1\antlr4-runtime-4.10.1.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\data\spring-data-jpa\3.1.4\spring-data-jpa-3.1.4.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\data\spring-data-commons\3.1.4\spring-data-commons-3.1.4.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\spring-orm\6.0.12\spring-orm-6.0.12.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\spring-tx\6.0.12\spring-tx-6.0.12.jar;C:\Users\eduardo.rocha\.m2\repository\org\slf4j\slf4j-api\2.0.9\slf4j-api-2.0.9.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\spring-aspects\6.0.12\spring-aspects-6.0.12.jar;C:\Users\eduardo.rocha\.m2\repository\com\h2database\h2\2.1.214\h2-2.1.214.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\boot\spring-boot-starter-test\3.1.4\spring-boot-starter-test-3.1.4.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\boot\spring-boot-test\3.1.4\spring-boot-test-3.1.4.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\3.1.4\spring-boot-test-autoconfigure-3.1.4.jar;C:\Users\eduardo.rocha\.m2\repository\com\jayway\jsonpath\json-path\2.8.0\json-path-2.8.0.jar;C:\Users\eduardo.rocha\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.1\jakarta.xml.bind-api-4.0.1.jar;C:\Users\eduardo.rocha\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.2\jakarta.activation-api-2.1.2.jar;C:\Users\eduardo.rocha\.m2\repository\net\minidev\json-smart\2.4.11\json-smart-2.4.11.jar;C:\Users\eduardo.rocha\.m2\repository\net\minidev\accessors-smart\2.4.11\accessors-smart-2.4.11.jar;C:\Users\eduardo.rocha\.m2\repository\org\ow2\asm\asm\9.3\asm-9.3.jar;C:\Users\eduardo.rocha\.m2\repository\org\assertj\assertj-core\3.24.2\assertj-core-3.24.2.jar;C:\Users\eduardo.rocha\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\eduardo.rocha\.m2\repository\org\junit\jupiter\junit-jupiter\5.9.3\junit-jupiter-5.9.3.jar;C:\Users\eduardo.rocha\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.3\junit-jupiter-api-5.9.3.jar;C:\Users\eduardo.rocha\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\eduardo.rocha\.m2\repository\org\junit\platform\junit-platform-commons\1.9.3\junit-platform-commons-1.9.3.jar;C:\Users\eduardo.rocha\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\eduardo.rocha\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.9.3\junit-jupiter-params-5.9.3.jar;C:\Users\eduardo.rocha\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.3\junit-jupiter-engine-5.9.3.jar;C:\Users\eduardo.rocha\.m2\repository\org\junit\platform\junit-platform-engine\1.9.3\junit-platform-engine-1.9.3.jar;C:\Users\eduardo.rocha\.m2\repository\org\mockito\mockito-core\5.3.1\mockito-core-5.3.1.jar;C:\Users\eduardo.rocha\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.8\byte-buddy-agent-1.14.8.jar;C:\Users\eduardo.rocha\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\eduardo.rocha\.m2\repository\org\mockito\mockito-junit-jupiter\5.3.1\mockito-junit-jupiter-5.3.1.jar;C:\Users\eduardo.rocha\.m2\repository\org\skyscreamer\jsonassert\1.5.1\jsonassert-1.5.1.jar;C:\Users\eduardo.rocha\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\spring-core\6.0.12\spring-core-6.0.12.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\spring-jcl\6.0.12\spring-jcl-6.0.12.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\spring-test\6.0.12\spring-test-6.0.12.jar;C:\Users\eduardo.rocha\.m2\repository\org\xmlunit\xmlunit-core\2.9.1\xmlunit-core-2.9.1.jar;C:\Users\eduardo.rocha\.m2\repository\org\postgresql\postgresql\42.6.0\postgresql-42.6.0.jar;C:\Users\eduardo.rocha\.m2\repository\org\checkerframework\checker-qual\3.31.0\checker-qual-3.31.0.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\boot\spring-boot-devtools\3.1.4\spring-boot-devtools-3.1.4.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\boot\spring-boot\3.1.4\spring-boot-3.1.4.jar;C:\Users\eduardo.rocha\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.1.4\spring-boot-autoconfigure-3.1.4.jar;C:\Users\eduardo.rocha\.m2\repository\org\projectlombok\lombok\1.18.30\lombok-1.18.30.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\eduardo.rocha"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2023-07-18"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-17"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\eduardo.rocha\IdeaProjects\spring-boot-essentials"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="FILE_LOG_CHARSET" value="windows-1252"/>
+    <property name="java.awt.headless" value="true"/>
+    <property name="surefire.real.class.path" value="C:\Users\eduardo.rocha\AppData\Local\Temp\surefire17453889869000616265\surefirebooter-20231020143256707_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="17.0.8+9-LTS-211"/>
+    <property name="user.name" value="eduardo.rocha"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\eduardo.rocha\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\EDUARD~1.ROC\AppData\Local\Temp\"/>
+    <property name="catalina.home" value="C:\Users\eduardo.rocha\AppData\Local\Temp\tomcat.0.7674437851507071248"/>
+    <property name="java.version" value="17.0.8"/>
+    <property name="user.dir" value="C:\Users\eduardo.rocha\IdeaProjects\spring-boot-essentials"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="PID" value="3888"/>
+    <property name="user.language.format" value="pt"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="CONSOLE_LOG_CHARSET" value="windows-1252"/>
+    <property name="catalina.base" value="C:\Users\eduardo.rocha\AppData\Local\Temp\tomcat.0.9604086314193661772"/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-17\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Python311\Scripts\;C:\Python311\;C:\Python39\Scripts\;C:\Python39\;C:\Python38\Scripts\;C:\Python38\;C:\Windows\System32;C:\Windows;C:\Windows\System32\wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\ProgramData\chocolatey\bin;C:\Program Files\dotnet\;C:\Users\joao.ribeiro\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files (x86)\nodejs\;C:\Users\eduardo.rocha\AppData\Local\Microsoft\WindowsApps;C:\Users\eduardo.rocha\AppData\Local\Programs\Git\cmd;C:\Users\eduardo.rocha\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.2.2\bin;;C:\Users\eduardo.rocha\AppData\Roaming\npm;C:\apache-maven-3.9.5\bin;C:\Program Files\Java\jdk-17\bin;;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="17.0.8+9-LTS-211"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="61.0"/>
+  </properties>
+  <testcase name="update_UpdatesPerson_WhenSuccessful" classname="br.com.spring.placeti.integration.PersonControllerIT" time="3.199">
+    <system-out><![CDATA[14:32:58.052 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [br.com.spring.placeti.integration.PersonControllerIT]: PersonControllerIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+14:32:58.278 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration br.com.spring.placeti.ApplicationStart for test class br.com.spring.placeti.integration.PersonControllerIT
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.1.4)
+
+2023-10-20T14:32:59.057-03:00  INFO 3888 --- [           main] b.c.s.p.integration.PersonControllerIT   : Starting PersonControllerIT using Java 17.0.8 with PID 3888 (started by eduardo.rocha in C:\Users\eduardo.rocha\IdeaProjects\spring-boot-essentials)
+2023-10-20T14:32:59.059-03:00  INFO 3888 --- [           main] b.c.s.p.integration.PersonControllerIT   : No active profile set, falling back to 1 default profile: "default"
+2023-10-20T14:33:00.212-03:00  INFO 3888 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-20T14:33:00.341-03:00  INFO 3888 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 111 ms. Found 1 JPA repository interfaces.
+2023-10-20T14:33:00.485-03:00  INFO 3888 --- [           main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2023-10-20T14:33:01.420-03:00  INFO 3888 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2023-10-20T14:33:01.440-03:00  INFO 3888 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-20T14:33:01.440-03:00  INFO 3888 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.13]
+2023-10-20T14:33:01.604-03:00  INFO 3888 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-20T14:33:01.606-03:00  INFO 3888 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2521 ms
+2023-10-20T14:33:01.716-03:00  INFO 3888 --- [           main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:8a3a6c09-70c4-46e6-a863-92d1ed16e3e9;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2023-10-20T14:33:02.202-03:00  INFO 3888 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-20T14:33:02.323-03:00  INFO 3888 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.9.Final
+2023-10-20T14:33:02.330-03:00  INFO 3888 --- [           main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-10-20T14:33:02.629-03:00  INFO 3888 --- [           main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-10-20T14:33:02.883-03:00  INFO 3888 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-20T14:33:03.344-03:00  INFO 3888 --- [           main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-10-20T14:33:04.306-03:00  INFO 3888 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-20T14:33:04.364-03:00 DEBUG 3888 --- [           main] org.hibernate.SQL                        : create table person (id bigint generated by default as identity, age integer not null, name varchar(255), profession varchar(255), primary key (id))
+2023-10-20T14:33:04.375-03:00  INFO 3888 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-20T14:33:05.555-03:00  WARN 3888 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-20T14:33:07.433-03:00  INFO 3888 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 55048 (http) with context path ''
+2023-10-20T14:33:07.457-03:00  INFO 3888 --- [           main] b.c.s.p.integration.PersonControllerIT   : Started PersonControllerIT in 8.939 seconds (process running for 10.551)
+2023-10-20T14:33:07.573-03:00  INFO 3888 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-10-20T14:33:07.604-03:00  INFO 3888 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.1.4)
+
+2023-10-20T14:33:07.697-03:00  INFO 3888 --- [           main] b.c.s.p.integration.PersonControllerIT   : Starting PersonControllerIT using Java 17.0.8 with PID 3888 (started by eduardo.rocha in C:\Users\eduardo.rocha\IdeaProjects\spring-boot-essentials)
+2023-10-20T14:33:07.698-03:00  INFO 3888 --- [           main] b.c.s.p.integration.PersonControllerIT   : No active profile set, falling back to 1 default profile: "default"
+2023-10-20T14:33:08.273-03:00  INFO 3888 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-20T14:33:08.315-03:00  INFO 3888 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 41 ms. Found 1 JPA repository interfaces.
+2023-10-20T14:33:08.363-03:00  INFO 3888 --- [           main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2023-10-20T14:33:08.483-03:00  INFO 3888 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2023-10-20T14:33:08.485-03:00  INFO 3888 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-20T14:33:08.485-03:00  INFO 3888 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.13]
+2023-10-20T14:33:08.605-03:00  INFO 3888 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-20T14:33:08.606-03:00  INFO 3888 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 903 ms
+2023-10-20T14:33:08.645-03:00  INFO 3888 --- [           main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:b10be22c-657b-4bfe-9e90-5c20ac321272;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2023-10-20T14:33:08.726-03:00  INFO 3888 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-20T14:33:08.785-03:00  INFO 3888 --- [           main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-10-20T14:33:08.786-03:00  INFO 3888 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-20T14:33:08.812-03:00  INFO 3888 --- [           main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-10-20T14:33:08.909-03:00  INFO 3888 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-20T14:33:08.913-03:00 DEBUG 3888 --- [           main] org.hibernate.SQL                        : create table person (id bigint generated by default as identity, age integer not null, name varchar(255), profession varchar(255), primary key (id))
+2023-10-20T14:33:08.918-03:00  INFO 3888 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-20T14:33:09.057-03:00  WARN 3888 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-20T14:33:09.250-03:00  INFO 3888 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 55056 (http) with context path ''
+2023-10-20T14:33:09.256-03:00  INFO 3888 --- [           main] b.c.s.p.integration.PersonControllerIT   : Started PersonControllerIT in 1.636 seconds (process running for 12.349)
+2023-10-20T14:33:10.034-03:00 DEBUG 3888 --- [           main] org.hibernate.SQL                        : insert into person (age,name,profession,id) values (?,?,?,default)
+2023-10-20T14:33:10.269-03:00  INFO 3888 --- [o-auto-2-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-20T14:33:10.269-03:00  INFO 3888 --- [o-auto-2-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-20T14:33:10.270-03:00  INFO 3888 --- [o-auto-2-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-10-20T14:33:10.489-03:00 DEBUG 3888 --- [o-auto-2-exec-1] org.hibernate.SQL                        : select p1_0.id,p1_0.age,p1_0.name,p1_0.profession from person p1_0 where p1_0.id=?
+2023-10-20T14:33:10.528-03:00 DEBUG 3888 --- [o-auto-2-exec-1] org.hibernate.SQL                        : update person set age=?,name=?,profession=? where id=?
+]]></system-out>
+  </testcase>
+  <testcase name="findById_ReturnsPerson_WhenSuccessful" classname="br.com.spring.placeti.integration.PersonControllerIT" time="2.022">
+    <system-out><![CDATA[2023-10-20T14:33:10.720-03:00  INFO 3888 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-10-20T14:33:10.722-03:00  INFO 3888 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-10-20T14:33:10.728-03:00  INFO 3888 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.1.4)
+
+2023-10-20T14:33:10.811-03:00  INFO 3888 --- [           main] b.c.s.p.integration.PersonControllerIT   : Starting PersonControllerIT using Java 17.0.8 with PID 3888 (started by eduardo.rocha in C:\Users\eduardo.rocha\IdeaProjects\spring-boot-essentials)
+2023-10-20T14:33:10.811-03:00  INFO 3888 --- [           main] b.c.s.p.integration.PersonControllerIT   : No active profile set, falling back to 1 default profile: "default"
+2023-10-20T14:33:11.401-03:00  INFO 3888 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-20T14:33:11.450-03:00  INFO 3888 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 1 JPA repository interfaces.
+2023-10-20T14:33:11.506-03:00  INFO 3888 --- [           main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2023-10-20T14:33:11.613-03:00  INFO 3888 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2023-10-20T14:33:11.614-03:00  INFO 3888 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-20T14:33:11.615-03:00  INFO 3888 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.13]
+2023-10-20T14:33:11.668-03:00  INFO 3888 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-20T14:33:11.668-03:00  INFO 3888 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 855 ms
+2023-10-20T14:33:11.683-03:00  INFO 3888 --- [           main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:acaf9790-5858-4dbe-824b-7751adcd095f;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2023-10-20T14:33:11.781-03:00  INFO 3888 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-20T14:33:11.847-03:00  INFO 3888 --- [           main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-10-20T14:33:11.854-03:00  INFO 3888 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-20T14:33:11.904-03:00  INFO 3888 --- [           main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-10-20T14:33:11.973-03:00  INFO 3888 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-20T14:33:11.979-03:00 DEBUG 3888 --- [           main] org.hibernate.SQL                        : create table person (id bigint generated by default as identity, age integer not null, name varchar(255), profession varchar(255), primary key (id))
+2023-10-20T14:33:11.983-03:00  INFO 3888 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-20T14:33:12.240-03:00  WARN 3888 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-20T14:33:12.605-03:00  INFO 3888 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 55072 (http) with context path ''
+2023-10-20T14:33:12.613-03:00  INFO 3888 --- [           main] b.c.s.p.integration.PersonControllerIT   : Started PersonControllerIT in 1.878 seconds (process running for 15.706)
+2023-10-20T14:33:12.628-03:00 DEBUG 3888 --- [           main] org.hibernate.SQL                        : insert into person (age,name,profession,id) values (?,?,?,default)
+2023-10-20T14:33:12.650-03:00  INFO 3888 --- [o-auto-3-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-20T14:33:12.650-03:00  INFO 3888 --- [o-auto-3-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-20T14:33:12.653-03:00  INFO 3888 --- [o-auto-3-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-10-20T14:33:12.662-03:00 DEBUG 3888 --- [o-auto-3-exec-1] org.hibernate.SQL                        : select p1_0.id,p1_0.age,p1_0.name,p1_0.profession from person p1_0 where p1_0.id=?
+]]></system-out>
+  </testcase>
+  <testcase name="delete_DeletesPerson_WhenSuccessful" classname="br.com.spring.placeti.integration.PersonControllerIT" time="2.471">
+    <system-out><![CDATA[2023-10-20T14:33:12.758-03:00  INFO 3888 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-10-20T14:33:12.759-03:00  INFO 3888 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-10-20T14:33:12.768-03:00  INFO 3888 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.1.4)
+
+2023-10-20T14:33:12.867-03:00  INFO 3888 --- [           main] b.c.s.p.integration.PersonControllerIT   : Starting PersonControllerIT using Java 17.0.8 with PID 3888 (started by eduardo.rocha in C:\Users\eduardo.rocha\IdeaProjects\spring-boot-essentials)
+2023-10-20T14:33:12.867-03:00  INFO 3888 --- [           main] b.c.s.p.integration.PersonControllerIT   : No active profile set, falling back to 1 default profile: "default"
+2023-10-20T14:33:13.452-03:00  INFO 3888 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-20T14:33:13.570-03:00  INFO 3888 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 116 ms. Found 1 JPA repository interfaces.
+2023-10-20T14:33:13.620-03:00  INFO 3888 --- [           main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2023-10-20T14:33:13.855-03:00  INFO 3888 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2023-10-20T14:33:13.861-03:00  INFO 3888 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-20T14:33:13.875-03:00  INFO 3888 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.13]
+2023-10-20T14:33:14.098-03:00  INFO 3888 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-20T14:33:14.098-03:00  INFO 3888 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1227 ms
+2023-10-20T14:33:14.159-03:00  INFO 3888 --- [           main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:b56dbfba-ced8-4b85-9c4f-9b3090038a46;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2023-10-20T14:33:14.370-03:00  INFO 3888 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-20T14:33:14.438-03:00  INFO 3888 --- [           main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-10-20T14:33:14.439-03:00  INFO 3888 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-20T14:33:14.466-03:00  INFO 3888 --- [           main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-10-20T14:33:14.564-03:00  INFO 3888 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-20T14:33:14.572-03:00 DEBUG 3888 --- [           main] org.hibernate.SQL                        : create table person (id bigint generated by default as identity, age integer not null, name varchar(255), profession varchar(255), primary key (id))
+2023-10-20T14:33:14.574-03:00  INFO 3888 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-20T14:33:14.766-03:00  WARN 3888 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-20T14:33:15.117-03:00  INFO 3888 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 55078 (http) with context path ''
+2023-10-20T14:33:15.123-03:00  INFO 3888 --- [           main] b.c.s.p.integration.PersonControllerIT   : Started PersonControllerIT in 2.349 seconds (process running for 18.216)
+2023-10-20T14:33:15.134-03:00 DEBUG 3888 --- [           main] org.hibernate.SQL                        : insert into person (age,name,profession,id) values (?,?,?,default)
+2023-10-20T14:33:15.147-03:00  INFO 3888 --- [o-auto-4-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-20T14:33:15.148-03:00  INFO 3888 --- [o-auto-4-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-20T14:33:15.150-03:00  INFO 3888 --- [o-auto-4-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-10-20T14:33:15.157-03:00 DEBUG 3888 --- [o-auto-4-exec-1] org.hibernate.SQL                        : select p1_0.id,p1_0.age,p1_0.name,p1_0.profession from person p1_0 where p1_0.id=?
+2023-10-20T14:33:15.175-03:00 DEBUG 3888 --- [o-auto-4-exec-1] org.hibernate.SQL                        : delete from person where id=?
+]]></system-out>
+  </testcase>
+  <testcase name="list_ReturnsListOfAnimesInsidePageObject_WhenSuccessful" classname="br.com.spring.placeti.integration.PersonControllerIT" time="1.436">
+    <system-out><![CDATA[2023-10-20T14:33:15.227-03:00  INFO 3888 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-10-20T14:33:15.228-03:00  INFO 3888 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-10-20T14:33:15.235-03:00  INFO 3888 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.1.4)
+
+2023-10-20T14:33:15.313-03:00  INFO 3888 --- [           main] b.c.s.p.integration.PersonControllerIT   : Starting PersonControllerIT using Java 17.0.8 with PID 3888 (started by eduardo.rocha in C:\Users\eduardo.rocha\IdeaProjects\spring-boot-essentials)
+2023-10-20T14:33:15.314-03:00  INFO 3888 --- [           main] b.c.s.p.integration.PersonControllerIT   : No active profile set, falling back to 1 default profile: "default"
+2023-10-20T14:33:15.719-03:00  INFO 3888 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-20T14:33:15.752-03:00  INFO 3888 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 32 ms. Found 1 JPA repository interfaces.
+2023-10-20T14:33:15.792-03:00  INFO 3888 --- [           main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2023-10-20T14:33:15.868-03:00  INFO 3888 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2023-10-20T14:33:15.869-03:00  INFO 3888 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-20T14:33:15.870-03:00  INFO 3888 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.13]
+2023-10-20T14:33:15.914-03:00  INFO 3888 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-20T14:33:15.914-03:00  INFO 3888 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 596 ms
+2023-10-20T14:33:15.937-03:00  INFO 3888 --- [           main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:5f0b5513-d467-4b6a-b4f6-32e74fe5799d;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2023-10-20T14:33:15.975-03:00  INFO 3888 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-20T14:33:15.996-03:00  INFO 3888 --- [           main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-10-20T14:33:15.996-03:00  INFO 3888 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-20T14:33:16.009-03:00  INFO 3888 --- [           main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-10-20T14:33:16.058-03:00  INFO 3888 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-20T14:33:16.061-03:00 DEBUG 3888 --- [           main] org.hibernate.SQL                        : create table person (id bigint generated by default as identity, age integer not null, name varchar(255), profession varchar(255), primary key (id))
+2023-10-20T14:33:16.064-03:00  INFO 3888 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-20T14:33:16.158-03:00  WARN 3888 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-20T14:33:16.371-03:00  INFO 3888 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 55087 (http) with context path ''
+2023-10-20T14:33:16.383-03:00  INFO 3888 --- [           main] b.c.s.p.integration.PersonControllerIT   : Started PersonControllerIT in 1.142 seconds (process running for 19.477)
+2023-10-20T14:33:16.390-03:00 DEBUG 3888 --- [           main] org.hibernate.SQL                        : insert into person (age,name,profession,id) values (?,?,?,default)
+2023-10-20T14:33:16.453-03:00  INFO 3888 --- [o-auto-5-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-20T14:33:16.453-03:00  INFO 3888 --- [o-auto-5-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-20T14:33:16.454-03:00  INFO 3888 --- [o-auto-5-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-10-20T14:33:16.573-03:00 DEBUG 3888 --- [o-auto-5-exec-1] org.hibernate.SQL                        : select p1_0.id,p1_0.age,p1_0.name,p1_0.profession from person p1_0 offset ? rows fetch first ? rows only
+]]></system-out>
+  </testcase>
+  <testcase name="listAll_ReturnsListOfPerson_WhenSuccessful" classname="br.com.spring.placeti.integration.PersonControllerIT" time="1.201">
+    <system-out><![CDATA[2023-10-20T14:33:16.651-03:00  INFO 3888 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-10-20T14:33:16.652-03:00  INFO 3888 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-10-20T14:33:16.656-03:00  INFO 3888 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.1.4)
+
+2023-10-20T14:33:16.720-03:00  INFO 3888 --- [           main] b.c.s.p.integration.PersonControllerIT   : Starting PersonControllerIT using Java 17.0.8 with PID 3888 (started by eduardo.rocha in C:\Users\eduardo.rocha\IdeaProjects\spring-boot-essentials)
+2023-10-20T14:33:16.721-03:00  INFO 3888 --- [           main] b.c.s.p.integration.PersonControllerIT   : No active profile set, falling back to 1 default profile: "default"
+2023-10-20T14:33:17.181-03:00  INFO 3888 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-20T14:33:17.215-03:00  INFO 3888 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 33 ms. Found 1 JPA repository interfaces.
+2023-10-20T14:33:17.259-03:00  INFO 3888 --- [           main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2023-10-20T14:33:17.345-03:00  INFO 3888 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2023-10-20T14:33:17.347-03:00  INFO 3888 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-20T14:33:17.347-03:00  INFO 3888 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.13]
+2023-10-20T14:33:17.396-03:00  INFO 3888 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-20T14:33:17.396-03:00  INFO 3888 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 670 ms
+2023-10-20T14:33:17.409-03:00  INFO 3888 --- [           main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:0a1eb5b5-aa11-4afe-a1af-4e5188a09054;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2023-10-20T14:33:17.445-03:00  INFO 3888 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-20T14:33:17.475-03:00  INFO 3888 --- [           main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-10-20T14:33:17.476-03:00  INFO 3888 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-20T14:33:17.488-03:00  INFO 3888 --- [           main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-10-20T14:33:17.534-03:00  INFO 3888 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-20T14:33:17.536-03:00 DEBUG 3888 --- [           main] org.hibernate.SQL                        : create table person (id bigint generated by default as identity, age integer not null, name varchar(255), profession varchar(255), primary key (id))
+2023-10-20T14:33:17.539-03:00  INFO 3888 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-20T14:33:17.631-03:00  WARN 3888 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-20T14:33:17.785-03:00  INFO 3888 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 55096 (http) with context path ''
+2023-10-20T14:33:17.791-03:00  INFO 3888 --- [           main] b.c.s.p.integration.PersonControllerIT   : Started PersonControllerIT in 1.13 seconds (process running for 20.884)
+2023-10-20T14:33:17.799-03:00 DEBUG 3888 --- [           main] org.hibernate.SQL                        : insert into person (age,name,profession,id) values (?,?,?,default)
+2023-10-20T14:33:17.806-03:00  INFO 3888 --- [o-auto-6-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-20T14:33:17.806-03:00  INFO 3888 --- [o-auto-6-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-20T14:33:17.808-03:00  INFO 3888 --- [o-auto-6-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-10-20T14:33:17.813-03:00 DEBUG 3888 --- [o-auto-6-exec-1] org.hibernate.SQL                        : select p1_0.id,p1_0.age,p1_0.name,p1_0.profession from person p1_0
+]]></system-out>
+  </testcase>
+  <testcase name="findByProfession_ReturnsListOfPerson_WhenSuccessful" classname="br.com.spring.placeti.integration.PersonControllerIT" time="1.927">
+    <system-out><![CDATA[2023-10-20T14:33:17.872-03:00  INFO 3888 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-10-20T14:33:17.874-03:00  INFO 3888 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-10-20T14:33:17.883-03:00  INFO 3888 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.1.4)
+
+2023-10-20T14:33:18.043-03:00  INFO 3888 --- [           main] b.c.s.p.integration.PersonControllerIT   : Starting PersonControllerIT using Java 17.0.8 with PID 3888 (started by eduardo.rocha in C:\Users\eduardo.rocha\IdeaProjects\spring-boot-essentials)
+2023-10-20T14:33:18.043-03:00  INFO 3888 --- [           main] b.c.s.p.integration.PersonControllerIT   : No active profile set, falling back to 1 default profile: "default"
+2023-10-20T14:33:18.676-03:00  INFO 3888 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-20T14:33:18.734-03:00  INFO 3888 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 1 JPA repository interfaces.
+2023-10-20T14:33:18.822-03:00  INFO 3888 --- [           main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2023-10-20T14:33:18.951-03:00  INFO 3888 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2023-10-20T14:33:18.952-03:00  INFO 3888 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-20T14:33:18.953-03:00  INFO 3888 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.13]
+2023-10-20T14:33:19.052-03:00  INFO 3888 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-20T14:33:19.053-03:00  INFO 3888 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1003 ms
+2023-10-20T14:33:19.075-03:00  INFO 3888 --- [           main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:f8e176d0-9ca6-4988-9ef2-e949809b0370;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2023-10-20T14:33:19.143-03:00  INFO 3888 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-20T14:33:19.169-03:00  INFO 3888 --- [           main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-10-20T14:33:19.169-03:00  INFO 3888 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-20T14:33:19.186-03:00  INFO 3888 --- [           main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-10-20T14:33:19.257-03:00  INFO 3888 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-20T14:33:19.261-03:00 DEBUG 3888 --- [           main] org.hibernate.SQL                        : create table person (id bigint generated by default as identity, age integer not null, name varchar(255), profession varchar(255), primary key (id))
+2023-10-20T14:33:19.266-03:00  INFO 3888 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-20T14:33:19.459-03:00  WARN 3888 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-20T14:33:19.624-03:00  INFO 3888 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 55103 (http) with context path ''
+2023-10-20T14:33:19.629-03:00  INFO 3888 --- [           main] b.c.s.p.integration.PersonControllerIT   : Started PersonControllerIT in 1.741 seconds (process running for 22.722)
+2023-10-20T14:33:19.637-03:00 DEBUG 3888 --- [           main] org.hibernate.SQL                        : insert into person (age,name,profession,id) values (?,?,?,default)
+2023-10-20T14:33:19.651-03:00  INFO 3888 --- [o-auto-7-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-20T14:33:19.652-03:00  INFO 3888 --- [o-auto-7-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-20T14:33:19.654-03:00  INFO 3888 --- [o-auto-7-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-10-20T14:33:19.736-03:00 DEBUG 3888 --- [o-auto-7-exec-1] org.hibernate.SQL                        : select p1_0.id,p1_0.age,p1_0.name,p1_0.profession from person p1_0 where p1_0.profession=?
+]]></system-out>
+  </testcase>
+  <testcase name="save_ReturnsPerson_WhenSuccessful" classname="br.com.spring.placeti.integration.PersonControllerIT" time="0.926">
+    <system-out><![CDATA[2023-10-20T14:33:19.793-03:00  INFO 3888 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-10-20T14:33:19.794-03:00  INFO 3888 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-10-20T14:33:19.799-03:00  INFO 3888 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.1.4)
+
+2023-10-20T14:33:19.856-03:00  INFO 3888 --- [           main] b.c.s.p.integration.PersonControllerIT   : Starting PersonControllerIT using Java 17.0.8 with PID 3888 (started by eduardo.rocha in C:\Users\eduardo.rocha\IdeaProjects\spring-boot-essentials)
+2023-10-20T14:33:19.856-03:00  INFO 3888 --- [           main] b.c.s.p.integration.PersonControllerIT   : No active profile set, falling back to 1 default profile: "default"
+2023-10-20T14:33:20.212-03:00  INFO 3888 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-20T14:33:20.240-03:00  INFO 3888 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27 ms. Found 1 JPA repository interfaces.
+2023-10-20T14:33:20.265-03:00  INFO 3888 --- [           main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2023-10-20T14:33:20.318-03:00  INFO 3888 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2023-10-20T14:33:20.319-03:00  INFO 3888 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-20T14:33:20.320-03:00  INFO 3888 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.13]
+2023-10-20T14:33:20.356-03:00  INFO 3888 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-20T14:33:20.356-03:00  INFO 3888 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 496 ms
+2023-10-20T14:33:20.366-03:00  INFO 3888 --- [           main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:fa2e0b4f-05a8-4c71-872a-c4179e384ba3;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2023-10-20T14:33:20.391-03:00  INFO 3888 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-20T14:33:20.408-03:00  INFO 3888 --- [           main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-10-20T14:33:20.408-03:00  INFO 3888 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-20T14:33:20.418-03:00  INFO 3888 --- [           main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-10-20T14:33:20.446-03:00  INFO 3888 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-20T14:33:20.449-03:00 DEBUG 3888 --- [           main] org.hibernate.SQL                        : create table person (id bigint generated by default as identity, age integer not null, name varchar(255), profession varchar(255), primary key (id))
+2023-10-20T14:33:20.450-03:00  INFO 3888 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-20T14:33:20.517-03:00  WARN 3888 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-20T14:33:20.651-03:00  INFO 3888 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 55106 (http) with context path ''
+2023-10-20T14:33:20.654-03:00  INFO 3888 --- [           main] b.c.s.p.integration.PersonControllerIT   : Started PersonControllerIT in 0.852 seconds (process running for 23.747)
+2023-10-20T14:33:20.667-03:00  INFO 3888 --- [o-auto-8-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-20T14:33:20.667-03:00  INFO 3888 --- [o-auto-8-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-20T14:33:20.668-03:00  INFO 3888 --- [o-auto-8-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-10-20T14:33:20.680-03:00 DEBUG 3888 --- [o-auto-8-exec-1] org.hibernate.SQL                        : insert into person (age,name,profession,id) values (?,?,?,default)
+]]></system-out>
+  </testcase>
+  <testcase name="findByProfession_ReturnsEmptyListOfPerson_WhenPersonIsNotFound" classname="br.com.spring.placeti.integration.PersonControllerIT" time="0.741">
+    <system-out><![CDATA[2023-10-20T14:33:20.716-03:00  INFO 3888 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-10-20T14:33:20.717-03:00  INFO 3888 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-10-20T14:33:20.739-03:00  INFO 3888 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.1.4)
+
+2023-10-20T14:33:20.776-03:00  INFO 3888 --- [           main] b.c.s.p.integration.PersonControllerIT   : Starting PersonControllerIT using Java 17.0.8 with PID 3888 (started by eduardo.rocha in C:\Users\eduardo.rocha\IdeaProjects\spring-boot-essentials)
+2023-10-20T14:33:20.776-03:00  INFO 3888 --- [           main] b.c.s.p.integration.PersonControllerIT   : No active profile set, falling back to 1 default profile: "default"
+2023-10-20T14:33:20.973-03:00  INFO 3888 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-20T14:33:20.995-03:00  INFO 3888 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 1 JPA repository interfaces.
+2023-10-20T14:33:21.013-03:00  INFO 3888 --- [           main] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2023-10-20T14:33:21.054-03:00  INFO 3888 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2023-10-20T14:33:21.055-03:00  INFO 3888 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-20T14:33:21.055-03:00  INFO 3888 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.13]
+2023-10-20T14:33:21.085-03:00  INFO 3888 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-20T14:33:21.085-03:00  INFO 3888 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 306 ms
+2023-10-20T14:33:21.099-03:00  INFO 3888 --- [           main] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:4452d5d9-9e68-4be1-af75-5246d68b4a02;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2023-10-20T14:33:21.133-03:00  INFO 3888 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-20T14:33:21.150-03:00  INFO 3888 --- [           main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-10-20T14:33:21.150-03:00  INFO 3888 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-10-20T14:33:21.165-03:00  INFO 3888 --- [           main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-10-20T14:33:21.215-03:00  INFO 3888 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-20T14:33:21.218-03:00 DEBUG 3888 --- [           main] org.hibernate.SQL                        : create table person (id bigint generated by default as identity, age integer not null, name varchar(255), profession varchar(255), primary key (id))
+2023-10-20T14:33:21.220-03:00  INFO 3888 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-20T14:33:21.304-03:00  WARN 3888 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-20T14:33:21.410-03:00  INFO 3888 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 55109 (http) with context path ''
+2023-10-20T14:33:21.412-03:00  INFO 3888 --- [           main] b.c.s.p.integration.PersonControllerIT   : Started PersonControllerIT in 0.671 seconds (process running for 24.507)
+2023-10-20T14:33:21.419-03:00  INFO 3888 --- [o-auto-9-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-20T14:33:21.419-03:00  INFO 3888 --- [o-auto-9-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-20T14:33:21.420-03:00  INFO 3888 --- [o-auto-9-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-10-20T14:33:21.425-03:00 DEBUG 3888 --- [o-auto-9-exec-1] org.hibernate.SQL                        : select p1_0.id,p1_0.age,p1_0.name,p1_0.profession from person p1_0 where p1_0.profession=?
+]]></system-out>
+  </testcase>
+</testsuite>
