@@ -1,8 +1,10 @@
 package br.com.spring.placeti.integration;
 
 import br.com.spring.placeti.domain.Person;
+import br.com.spring.placeti.domain.PersonUser;
 import br.com.spring.placeti.dto.PersonPostDTO;
 import br.com.spring.placeti.repository.PersonRepository;
+import br.com.spring.placeti.repository.PersonUserRepository;
 import br.com.spring.placeti.util.PersonCreator;
 import br.com.spring.placeti.util.PersonPostDTOCreator;
 import br.com.spring.placeti.wrapper.PageableResponse;
@@ -10,9 +12,15 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
@@ -27,10 +35,53 @@ import java.util.List;
 @DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
 class PersonControllerIT {
     @Autowired
-    private TestRestTemplate testRestTemplate;
+    @Qualifier(value = "testRestTemplateRoleUser")
+    private TestRestTemplate testRestTemplateRoleUser;
+
+    @Autowired
+    @Qualifier(value = "testRestTemplateRoleAdmin")
+    private TestRestTemplate testRestTemplateRoleAdmin;
 
     @Autowired
     private PersonRepository personRepository;
+
+    @Autowired
+    private PersonUserRepository personUserRepository;
+
+    private static final PersonUser ADMIN = PersonUser.builder()
+            .name("Eduardo Alves")
+            .password("{bcrypt}$2a$10$hOtGS/.wlg1h0K.lGe5ZDOatHlFStZ6ALJC/OAeCQ8XQyI/pVK5z.")
+            .username("eduardo")
+            .authorities("ROLE_ADMIN")
+            .build();
+
+    private static final PersonUser USER = PersonUser.builder()
+            .name("Eduardo Alves")
+            .password("{bcrypt}$2a$10$hOtGS/.wlg1h0K.lGe5ZDOatHlFStZ6ALJC/OAeCQ8XQyI/pVK5z.")
+            .username("eduardoTest")
+            .authorities("ROLE_USER")
+            .build();
+
+    @TestConfiguration
+    @Lazy
+    static class Config {
+        @Bean(name = "testRestTemplateRoleUser")
+        public TestRestTemplate testRestTemplateRoleUserCreator(@Value("${local.server.port}") int port) {
+            RestTemplateBuilder restTemplateBuilder = new RestTemplateBuilder()
+                    .rootUri("http://localhost:" + port)
+                    .basicAuthentication("eduardoTest", "1234");
+            return new TestRestTemplate(restTemplateBuilder);
+        }
+
+        @Bean(name = "testRestTemplateRoleAdmin")
+        public TestRestTemplate testRestTemplateRoleAdminCreator(@Value("${local.server.port}") int port) {
+            RestTemplateBuilder restTemplateBuilder = new RestTemplateBuilder()
+                    .rootUri("http://localhost:" + port)
+                    .basicAuthentication("eduardo", "1234");
+            return new TestRestTemplate(restTemplateBuilder);
+        }
+    }
+
 
     @Test
     @DisplayName("list returns list of person inside page object when successful")
@@ -38,9 +89,11 @@ class PersonControllerIT {
 
         Person personSaved = personRepository.save(PersonCreator.createPersonToBeSaved());
 
+        personUserRepository.save(USER);
+
         String expectedName = personSaved.getName();
 
-        PageableResponse<Person> personPage = testRestTemplate.exchange("/persons",
+        PageableResponse<Person> personPage = testRestTemplateRoleUser.exchange("/persons",
                 HttpMethod.GET,
                 null, new ParameterizedTypeReference<PageableResponse<Person>>() {
                 }).getBody();
@@ -60,9 +113,11 @@ class PersonControllerIT {
 
         Person personSaved = personRepository.save(PersonCreator.createPersonToBeSaved());
 
+        personUserRepository.save(USER);
+
         String expectedValue = personSaved.getName();
 
-        List<Person> persons = testRestTemplate.exchange("/persons/all",
+        List<Person> persons = testRestTemplateRoleUser.exchange("/persons/all",
                 HttpMethod.GET,
                 null,
                 new ParameterizedTypeReference<List<Person>>() {
@@ -81,9 +136,11 @@ class PersonControllerIT {
 
         Person personSaved = personRepository.save(PersonCreator.createPersonToBeSaved());
 
+        personUserRepository.save(USER);
+
         Long expectedId = personSaved.getId();
 
-        Person person = testRestTemplate.getForObject("/persons/{id}", Person.class, expectedId);
+        Person person = testRestTemplateRoleUser.getForObject("/persons/{id}", Person.class, expectedId);
 
         Assertions.assertThat(person)
                 .isNotNull();
@@ -99,11 +156,13 @@ class PersonControllerIT {
 
         Person personSaved = personRepository.save(PersonCreator.createPersonToBeSaved());
 
+        personUserRepository.save(USER);
+
         String expectedValue = personSaved.getProfession();
 
         String url = String.format("/persons/find?profession=%s", expectedValue);
 
-        List<Person> persons = testRestTemplate.exchange(url,
+        List<Person> persons = testRestTemplateRoleUser.exchange(url,
                 HttpMethod.GET,
                 null,
                 new ParameterizedTypeReference<List<Person>>() {
@@ -120,7 +179,9 @@ class PersonControllerIT {
     @DisplayName("findByProfession returns an empty list of person when profession is not found")
     void findByProfession_ReturnsEmptyListOfPerson_WhenPersonIsNotFound() {
 
-        List<Person> persons = testRestTemplate.exchange("/persons/find?profession=engenheiro",
+        personUserRepository.save(USER);
+
+        List<Person> persons = testRestTemplateRoleUser.exchange("/persons/find?profession=engenheiro",
                 HttpMethod.GET,
                 null,
                 new ParameterizedTypeReference<List<Person>>() {
@@ -135,9 +196,11 @@ class PersonControllerIT {
     @DisplayName("save returns person when successful")
     void save_ReturnsPerson_WhenSuccessful() {
 
+        personUserRepository.save(USER);
+
         PersonPostDTO personPostDTO = PersonPostDTOCreator.createPersonPostDTO();
 
-        ResponseEntity<Person> personResponseEntity = testRestTemplate.postForEntity("/persons",
+        ResponseEntity<Person> personResponseEntity = testRestTemplateRoleUser.postForEntity("/persons",
                 personPostDTO,
                 Person.class);
 
@@ -156,9 +219,11 @@ class PersonControllerIT {
 
         Person personSaved = personRepository.save(PersonCreator.createPersonToBeSaved());
 
+        personUserRepository.save(USER);
+
         personSaved.setName("Bia");
 
-        ResponseEntity<Void> personResponseEntity = testRestTemplate.exchange("/persons",
+        ResponseEntity<Void> personResponseEntity = testRestTemplateRoleUser.exchange("/persons",
                 HttpMethod.PUT,
                 new HttpEntity<>(personSaved),
                 Void.class);
@@ -174,7 +239,9 @@ class PersonControllerIT {
 
         Person personSaved = personRepository.save(PersonCreator.createPersonToBeSaved());
 
-        ResponseEntity<Void> personEntity = testRestTemplate.exchange("/persons/{id}",
+        personUserRepository.save(ADMIN);
+
+        ResponseEntity<Void> personEntity = testRestTemplateRoleAdmin.exchange("/persons/admin/{id}",
                 HttpMethod.DELETE,
                 null,
                 Void.class,
@@ -183,6 +250,26 @@ class PersonControllerIT {
         Assertions.assertThat(personEntity).isNotNull();
 
         Assertions.assertThat(personEntity.getStatusCode()).isEqualTo(HttpStatus.NO_CONTENT);
+    }
+
+    @Test
+    @DisplayName("delete returns 403 when user is not admin")
+    void delete_Retuns403_WhenUserIsNotAdmin() {
+
+        Person personSaved = personRepository.save(PersonCreator.createPersonToBeSaved());
+
+        personUserRepository.save(USER);
+
+
+        ResponseEntity<Void> personEntity = testRestTemplateRoleUser.exchange("/persons/admin/{id}",
+                HttpMethod.DELETE,
+                null,
+                Void.class,
+                personSaved.getId());
+
+        Assertions.assertThat(personEntity).isNotNull();
+
+        Assertions.assertThat(personEntity.getStatusCode()).isEqualTo(HttpStatus.FORBIDDEN);
     }
 
 }

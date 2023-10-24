@@ -2,6 +2,8 @@ server:
   error:
     include-stacktrace: never
 spring:
+  application:
+    name: Springboot-essentials
   datasource:
     url: jdbc:postgresql://localhost:5432/person
     username: postgres
@@ -15,4 +17,20 @@ logging:
     org:
       hibernate:
         SQL: DEBUG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  info:
+    env:
+      enabled: true
+
+info:
+  app: Spring boot 2 Essentials
+  website: https://linkedin.com/in/edudu4
+  github: https://github.com/edudu4
+
+
 

@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: br.com.spring.placeti.integration.PersonControllerIT
--------------------------------------------------------------------------------
-Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 23.669 s - in br.com.spring.placeti.integration.PersonControllerIT
