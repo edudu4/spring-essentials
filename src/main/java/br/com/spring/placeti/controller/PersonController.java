@@ -3,10 +3,9 @@ package br.com.spring.placeti.controller;
 import br.com.spring.placeti.domain.Person;
 import br.com.spring.placeti.dto.PersonPostDTO;
 import br.com.spring.placeti.dto.PersonPutDTO;
+import br.com.spring.placeti.response.FindAverageAgePersonsProfessionResponseBody;
 import br.com.spring.placeti.service.PersonService;
-import br.com.spring.placeti.util.DateUtil;
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.validation.Valid;
@@ -17,12 +16,10 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
@@ -64,6 +61,25 @@ public class PersonController {
     @Operation(summary = "List all persons with a same profession", tags = {"Person"})
     public ResponseEntity<List<Person>> findByProfession(@RequestParam String profession) {
         return new ResponseEntity<>(personService.findByProfession(profession), HttpStatus.OK);
+    }
+
+    @GetMapping(path = "/findByProfessionAge")
+    @Operation(summary = "List all persons with a specific profession and age", tags = {"Person"})
+    public ResponseEntity<List<Person>> findByProfessionAndAge(@RequestParam String profession, @RequestParam int age) {
+        log.info(profession, age);
+        return new ResponseEntity<>(personService.findByProfessionAndAge(profession, age), HttpStatus.OK);
+    }
+
+    @GetMapping(path = "/findPersonsInRange")
+    @Operation(summary = "findPersonsInRangeWithSameProfession returns list of object that represents persons in a specific range with the same profession", tags = {"Person"})
+    public ResponseEntity<List<Object>> findPersonsInRangeWithSameProfession(@RequestParam int firstAge, int lastAge) {
+        return new ResponseEntity<>(personService.findPersonsInRangeWithSameProfession(firstAge, lastAge), HttpStatus.OK);
+    }
+
+    @GetMapping(path = "/findAverageAgeProfession")
+    @Operation(summary = "findAverageAgeProfession returns list of object that represents persons and their average age with the same profession", tags = {"Person"})
+    public ResponseEntity<FindAverageAgePersonsProfessionResponseBody> findAverageAgeProfession(@RequestParam String profession) {
+        return new ResponseEntity<>(personService.findAverageAgeProfession(profession), HttpStatus.OK);
     }
 
     @PostMapping

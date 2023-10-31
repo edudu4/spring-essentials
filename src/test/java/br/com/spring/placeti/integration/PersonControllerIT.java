@@ -5,6 +5,7 @@ import br.com.spring.placeti.domain.PersonUser;
 import br.com.spring.placeti.dto.PersonPostDTO;
 import br.com.spring.placeti.repository.PersonRepository;
 import br.com.spring.placeti.repository.PersonUserRepository;
+import br.com.spring.placeti.response.FindAverageAgePersonsProfessionResponseBody;
 import br.com.spring.placeti.util.PersonCreator;
 import br.com.spring.placeti.util.PersonPostDTOCreator;
 import br.com.spring.placeti.wrapper.PageableResponse;
@@ -193,6 +194,86 @@ class PersonControllerIT {
     }
 
     @Test
+    @DisplayName("findByProfessionAndAge returns list of person with that profession and age when successful")
+    void findByProfessionAndAge_ReturnsListOfPerson_WhenSuccessful() {
+
+        Person personSaved = personRepository.save(PersonCreator.createPersonToBeSaved());
+
+        personUserRepository.save(USER);
+
+        String expectedValue = personSaved.getProfession();
+        int expectedAge = personSaved.getAge();
+
+        List<Person> persons = testRestTemplateRoleUser.exchange("/persons/findByProfessionAge?profession=Desenvolvedor&age=22",
+                HttpMethod.GET,
+                null,
+                new ParameterizedTypeReference<List<Person>>() {
+                }).getBody();
+
+        Assertions.assertThat(persons)
+                .isNotNull()
+                .hasSize(1);
+
+
+        Assertions.assertThat(persons.get(0).getId())
+                .isNotNull()
+                .isEqualTo(personSaved.getId());
+
+        Assertions.assertThat(persons.get(0).getProfession()).isEqualTo(expectedValue);
+        Assertions.assertThat(persons.get(0).getAge()).isEqualTo(expectedAge);
+
+    }
+
+    @Test
+    @DisplayName("findPersonsInRangeWithSameProfession returns list of object that represents persons in a specific range with the same profession when successful")
+    void findPersonsInRangeWithSameProfession_ReturnsListOfObject_WhenSuccessful() {
+
+        personRepository.save(PersonCreator.createPersonToBeSaved());
+        personRepository.save(PersonCreator.createPersonToBeSaved());
+
+        personUserRepository.save(USER);
+
+        List<Object> persons = testRestTemplateRoleUser.exchange("/persons/findPersonsInRange?firstAge=20&lastAge=30",
+                HttpMethod.GET,
+                null,
+                new ParameterizedTypeReference<List<Object>>() {
+                }).getBody();
+
+        Assertions.assertThat(persons)
+                .isNotNull()
+                .hasSize(2);
+    }
+
+    @Test
+    @DisplayName("findAverageAgeProfession returns a list of persons and their average age for a specific profession when successful")
+    void findAverageAgeProfession_ReturnsListOfPersonsAndAverageAge_WhenSuccessful() {
+
+        Person personSaved = personRepository.save(PersonCreator.createPersonToBeSaved());
+
+        FindAverageAgePersonsProfessionResponseBody expectedValue = new FindAverageAgePersonsProfessionResponseBody(
+                List.of(personSaved), 22.0);
+
+        personUserRepository.save(USER);
+
+        FindAverageAgePersonsProfessionResponseBody receivedValue = testRestTemplateRoleUser.exchange("/persons/findAverageAgeProfession?profession=Desenvolvedor",
+                HttpMethod.GET,
+                null,
+                new ParameterizedTypeReference<FindAverageAgePersonsProfessionResponseBody>() {
+                }).getBody();
+
+        Assertions.assertThat(receivedValue)
+                .isNotNull();
+
+        Assertions.assertThat(receivedValue.getPersons())
+                .isNotNull()
+                .contains(expectedValue.getPersons().get(0));
+
+        Assertions.assertThat(receivedValue.getAverage())
+                .isNotZero()
+                .isEqualTo(expectedValue.getAverage());
+    }
+
+    @Test
     @DisplayName("save returns person when successful")
     void save_ReturnsPerson_WhenSuccessful() {
 
@@ -259,7 +340,6 @@ class PersonControllerIT {
         Person personSaved = personRepository.save(PersonCreator.createPersonToBeSaved());
 
         personUserRepository.save(USER);
-
 
         ResponseEntity<Void> personEntity = testRestTemplateRoleUser.exchange("/persons/admin/{id}",
                 HttpMethod.DELETE,

@@ -3,6 +3,7 @@ package br.com.spring.placeti.controller;
 import br.com.spring.placeti.domain.Person;
 import br.com.spring.placeti.dto.PersonPostDTO;
 import br.com.spring.placeti.dto.PersonPutDTO;
+import br.com.spring.placeti.response.FindAverageAgePersonsProfessionResponseBody;
 import br.com.spring.placeti.service.PersonService;
 import br.com.spring.placeti.util.PersonCreator;
 import br.com.spring.placeti.util.PersonPostDTOCreator;
@@ -22,6 +23,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -48,8 +50,17 @@ class PersonControllerTest {
         BDDMockito.when(personServiceMock.findByProfession(ArgumentMatchers.anyString()))
                 .thenReturn(List.of(PersonCreator.createValidPerson()));
 
+        BDDMockito.when(personServiceMock.findByProfessionAndAge(ArgumentMatchers.anyString(), ArgumentMatchers.anyInt()))
+                .thenReturn(List.of(PersonCreator.createValidPerson()));
+
+        BDDMockito.when(personServiceMock.findPersonsInRangeWithSameProfession(ArgumentMatchers.anyInt(), ArgumentMatchers.anyInt()))
+                .thenReturn(List.of(PersonCreator.createValidPerson()));
+
         BDDMockito.when(personServiceMock.save(ArgumentMatchers.any(PersonPostDTO.class)))
                 .thenReturn(PersonCreator.createValidPerson());
+
+        BDDMockito.when(personServiceMock.findAverageAgeProfession(ArgumentMatchers.anyString()))
+                .thenReturn(new FindAverageAgePersonsProfessionResponseBody(List.of(PersonCreator.createValidPerson()), 22.0));
 
         BDDMockito.doNothing().when(personServiceMock).replace(ArgumentMatchers.any(PersonPutDTO.class));
 
@@ -131,6 +142,61 @@ class PersonControllerTest {
         Assertions.assertThat(persons)
                 .isNotNull()
                 .isEmpty();
+    }
+
+    @Test
+    @DisplayName("findByProfessionAndAge returns list of person with that profession and age when successful")
+    void findByProfessionAndAge_ReturnsListOfPerson_WhenSuccessful() {
+
+        Person personExpected = PersonCreator.createValidPerson();
+
+        String expectedValue = personExpected.getProfession();
+        int expectedAge = personExpected.getAge();
+
+        List<Person> persons = personController.findByProfessionAndAge("Dev", 22).getBody();
+
+        Assertions.assertThat(persons)
+                .isNotNull()
+                .hasSize(1);
+
+        Assertions.assertThat(persons.get(0).getProfession()).isEqualTo(expectedValue);
+        Assertions.assertThat(persons.get(0).getAge()).isEqualTo(expectedAge);
+
+    }
+
+    @Test
+    @DisplayName("findPersonsInRangeWithSameProfession returns list of object that represents persons in a specific range with the same profession when successful")
+    void findPersonsInRangeWithSameProfession_ReturnsListOfObject_WhenSuccessful() {
+        Person objectExpected = new Person(1L, "Eduardo Alves", "Desenvolvedor", 22);
+
+        List<Object> persons = personController.findPersonsInRangeWithSameProfession(20, 22).getBody();
+
+        Assertions.assertThat(persons)
+                .isNotNull()
+                .hasSize(1)
+                .contains(objectExpected);
+    }
+
+
+    @Test
+    @DisplayName("findAverageAgeProfession returns a list of persons and their average age for a specific profession when successful")
+    void findAverageAgeProfession_ReturnsListOfPersonsAndAverageAge_WhenSuccessful() {
+
+        FindAverageAgePersonsProfessionResponseBody expectedValue = new FindAverageAgePersonsProfessionResponseBody(
+                List.of(PersonCreator.createValidPerson()), 22.0);
+
+        FindAverageAgePersonsProfessionResponseBody receivedValue = personController.findAverageAgeProfession("Dev").getBody();
+
+        Assertions.assertThat(receivedValue)
+                .isNotNull();
+
+        Assertions.assertThat(receivedValue.getPersons())
+                .isNotNull()
+                .contains(expectedValue.getPersons().get(0));
+
+        Assertions.assertThat(receivedValue.getAverage())
+                .isNotZero()
+                .isEqualTo(expectedValue.getAverage());
     }
 
     @Test

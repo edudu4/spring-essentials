@@ -2,7 +2,9 @@ package br.com.spring.placeti.service;
 
 import br.com.spring.placeti.domain.Person;
 import br.com.spring.placeti.exception.BadRequestException;
+import br.com.spring.placeti.repository.PersonCustomRepositoryImpl;
 import br.com.spring.placeti.repository.PersonRepository;
+import br.com.spring.placeti.response.FindAverageAgePersonsProfessionResponseBody;
 import br.com.spring.placeti.util.PersonCreator;
 import br.com.spring.placeti.util.PersonPostDTOCreator;
 import br.com.spring.placeti.util.PersonPutDTOCreator;
@@ -32,6 +34,9 @@ class PersonServiceTest {
     @Mock
     private PersonRepository personRepositoryMock;
 
+    @Mock
+    PersonCustomRepositoryImpl personCustomRepository;
+
     @BeforeEach
     void setUp() {
         PageImpl<Person> personPage = new PageImpl<>(List.of(PersonCreator.createValidPerson()));
@@ -45,6 +50,18 @@ class PersonServiceTest {
                 .thenReturn(Optional.of(PersonCreator.createValidPerson()));
 
         BDDMockito.when(personRepositoryMock.findByProfession(ArgumentMatchers.anyString()))
+                .thenReturn(List.of(PersonCreator.createValidPerson()));
+
+        BDDMockito.when(personRepositoryMock.findByProfessionContainingIgnoreCase(ArgumentMatchers.anyString()))
+                .thenReturn(List.of(PersonCreator.createValidPerson()));
+
+        BDDMockito.when(personRepositoryMock.findByProfessionAndAge(ArgumentMatchers.anyString(), ArgumentMatchers.anyInt()))
+                .thenReturn(List.of(PersonCreator.createValidPerson()));
+
+        BDDMockito.when(personRepositoryMock.findAverageAgeProfession(ArgumentMatchers.anyString()))
+                .thenReturn(22.0);
+
+        BDDMockito.when(personCustomRepository.findPersonsInRangeWithSameProfession(20, 22))
                 .thenReturn(List.of(PersonCreator.createValidPerson()));
 
         BDDMockito.when(personRepositoryMock.save(ArgumentMatchers.any(Person.class)))
@@ -103,7 +120,7 @@ class PersonServiceTest {
 
     @Test
     @DisplayName("findById throws BadRequestException when person is not found")
-    void findById_ThrowsBadRequestException_WhenPersonIsNotFound(){
+    void findById_ThrowsBadRequestException_WhenPersonIsNotFound() {
         BDDMockito.when(personRepositoryMock.findById(ArgumentMatchers.anyLong()))
                 .thenReturn(Optional.empty());
 
@@ -139,6 +156,62 @@ class PersonServiceTest {
                 .isNotNull()
                 .isEmpty();
     }
+
+    @Test
+    @DisplayName("findByProfessionAndAge returns list of person with that profession and age when successful")
+    void findByProfessionAndAge_ReturnsListOfPerson_WhenSuccessful() {
+
+        Person personExpected = PersonCreator.createValidPerson();
+
+        String expectedValue = personExpected.getProfession();
+        int expectedAge = personExpected.getAge();
+
+        List<Person> persons = personService.findByProfessionAndAge("Dev", 22);
+
+        Assertions.assertThat(persons)
+                .isNotNull()
+                .hasSize(1);
+
+        Assertions.assertThat(persons.get(0).getProfession()).isEqualTo(expectedValue);
+        Assertions.assertThat(persons.get(0).getAge()).isEqualTo(expectedAge);
+
+    }
+
+    @Test
+    @DisplayName("findPersonsInRangeWithSameProfession returns list of object that represents persons in a specific range with the same profession when successful")
+    void findPersonsInRangeWithSameProfession_ReturnsListOfObject_WhenSuccessful() {
+        Person objectExpected = new Person(1L, "Eduardo Alves", "Desenvolvedor", 22);
+
+        List<Object> persons = personService.findPersonsInRangeWithSameProfession(20, 22);
+
+        Assertions.assertThat(persons)
+                .isNotNull()
+                .hasSize(1)
+                .contains(objectExpected);
+    }
+
+
+    @Test
+    @DisplayName("findAverageAgeProfession returns a list of persons and their average age for a specific profession when successful")
+    void findAverageAgeProfession_ReturnsListOfPersonsAndAverageAge_WhenSuccessful() {
+
+        FindAverageAgePersonsProfessionResponseBody expectedValue = new FindAverageAgePersonsProfessionResponseBody(
+                List.of(PersonCreator.createValidPerson()), 22.0);
+
+        FindAverageAgePersonsProfessionResponseBody receivedValue = personService.findAverageAgeProfession("Dev");
+
+        Assertions.assertThat(receivedValue)
+                .isNotNull();
+
+        Assertions.assertThat(receivedValue.getPersons())
+                .isNotNull()
+                .contains(expectedValue.getPersons().get(0));
+
+        Assertions.assertThat(receivedValue.getAverage())
+                .isNotZero()
+                .isEqualTo(expectedValue.getAverage());
+    }
+
 
     @Test
     @DisplayName("save returns person when successful")
